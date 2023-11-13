@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta charset="utf-8">
+                <link rel="stylesheet" href="clock.css">
+            <link rel="stylesheet" href="style.css">
+	    
+	        <title></title>
+</head>
+
+<body>
+    
+  <div class="clock">
+    <div class="hour" id="hour"></div>
+    <div class="minute" id="minute"></div>
+    <div class="second" id="second"></div>
+  </div>
+  <div class="time" id="currentTime"></div>
+
+  <script>
+      function updateClock() {
+          
+          
+        const now = new Date();
+        const londonTimeFormat = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/London' });
+        const londonTime = londonTimeFormat.format(now);
+
+        const hh = now.getHours() % 12;
+        const mm = now.getMinutes();
+        const ss = now.getSeconds();
+
+        const hhElement = document.getElementById('hour');
+        const mmElement = document.getElementById('minute');
+        const ssElement = document.getElementById('second');
+        const timeElement = document.getElementById('currentTime');
+        const initialrotation = 90;
+        const hourDegrees = (hh + mm / 60) * 360 / 12 + initialrotation;
+        const minuteDegrees = (mm + ss / 60) * 360 / 60 + initialrotation;
+        const secondDegrees = ss * 360 / 60 + initialrotation;
+
+        hhElement.style.transform = `rotate(${hourDegrees}deg)`;
+        mmElement.style.transform = `rotate(${minuteDegrees}deg)`;
+        ssElement.style.transform = `rotate(${secondDegrees}deg)`;
+
+        timeElement.textContent = `London Time: ${londonTime}`;
+      }
+                               
+
+      setInterval(updateClock, 1000);
+      updateClock();
+
+  </script>
+</body>
+</html>

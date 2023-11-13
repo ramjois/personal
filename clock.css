@@ -1,0 +1,51 @@
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: url('images/axion_potential.png') no-repeat center center;
+      background-size: 500px;
+    }
+
+    .clock {
+        position: relative;
+        width: 600px;
+        height: 600px;
+        border: 5px solid black;
+        border-radius: 50%;
+    }
+
+    .hour, .minute, .second {
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      top: 50%;
+      left: 1.5%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: transform 0.5s cubic-bezier(0.4, 2.5, 0.3, 1);
+    }
+
+.hour{
+    height 1px;
+    background: black;
+}
+
+    .minute {
+      height: 2px;
+      background: black;
+    }
+
+    .second {
+      background: red;
+    }
+
+.time {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: black;
+]

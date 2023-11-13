@@ -121,3 +121,32 @@ pbubble {
     align-items: center;
     text-align: justify;
 }
+
+.hover-element {
+      padding: 20px;
+      /*border: 1px solid #ccc;*/
+      margin: 20px;
+      display: inline-block;
+    }
+
+.description {
+  display: none;
+  position: absolute;
+  top: 20px; /* Adjust the distance from the hover element */
+  left: 200px;
+  width: 200px;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  z-index: 1;
+}
+
+    /* Hide the description by default */
+    .hover-element .description {
+      display: none;
+    }
+
+    /* Show the description on hover */
+    .hover-element:hover .description {
+      display: block;
+    }
